@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Header Section -->
+<header>
+    <div class="header-content">
+        <img src="jspmlogo.png" alt="College Logo" class="logo">
+        <h1>  ICOER ENTC Student Details  </h1>
+        <img src="icoer.png" alt="Department Logo" class="dept-logo">
+    </div>
+</header>
+
+<h2> Fill the form to add new student details</h2>
+
+<!-- Form for Adding/Updating a Student -->
+<section>
+    <h2>Add New Student</h2>
+    <form id="studentForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+
+        <label for="yearOfStudy">Year of Study:</label>
+        <select id="yearOfStudy" name="yearOfStudy" required>
+            <option value="FE">FE</option>
+            <option value="SE">SE</option>
+            <option value="TE">TE</option>
+            <option value="BE">BE</option>
+        </select><br>
+
+        <label for="phoneNo">Phone Number:</label>
+        <input type="text" id="phoneNo" name="phoneNo" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="electiveSub1">Elective Subject 1:</label>
+        <input type="text" id="electiveSub1" name="electiveSub1"><br>
+
+        <label for="electiveSub2">Elective Subject 2:</label>
+        <input type="text" id="electiveSub2" name="electiveSub2"><br>
+
+        <label for="cgpa1">FE CGPA:</label>
+        <input type="number" step="0.01" id="cgpa1" name="cgpa1"><br>
+
+        <label for="cgpa2">SE CGPA:</label>
+        <input type="number" step="0.01" id="cgpa2" name="cgpa2"><br>
+
+        <label for="cgpa3">TE CGPA:</label>
+        <input type="number" step="0.01" id="cgpa3" name="cgpa3"><br>
+
+        <label for="cgpa4">BE CGPA:</label>
+        <input type="number" step="0.01" id="cgpa4" name="cgpa4"><br>
+
+        <button type="submit">Add Student</button>
+        <button type="button" id="updateButton" style="display: none;" onclick="updateStudent()">Update Student</button>
+    </form>
+</section>
+
+<!-- Section to fetch all students -->
+<section id="studentList">
+    <h2>All Students</h2>
+    <label for="filterYear">Select Year of Study:</label>
+    <select id="filterYear" onchange="filterStudents()">
+        <option value="">All</option>
+        <option value="FE">FE</option>
+        <option value="SE">SE</option>
+        <option value="TE">TE</option>
+        <option value="BE">BE</option>
+    </select>
+    <button onclick="getAllStudents()">Fetch Students</button>
+    <div id="studentsDisplay"></div>
+</section>
+
+<!-- Section to view student by ID -->
+<section id="viewStudent">
+    <h2>View Student by ID</h2>
+    <label for="studentId">Student ID:</label>
+    <input type="number" id="studentId" name="studentId" required>
+    <button onclick="getStudentById()">View Student</button>
+    <div id="studentDetails"></div>
+</section>
+
+<!-- Section to update student by ID -->
+<section id="updateStudentSection">
+    <h2>Update Student by ID</h2>
+    <label for="updateStudentId">Student ID:</label>
+    <input type="number" id="updateStudentId" name="updateStudentId" required>
+    <button onclick="fetchStudentForUpdate()">Fetch Student</button>
+</section>
+
+<script src="script.js"></script>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <p>Contact: (020) 67335100, 67335102</p>
+
+        <!-- College Social Media Section -->
+        <div class="social-media">
+            <h3>Department Social Media:</h3>
+            <a href="https://www.instagram.com/etsa__icoer?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram : ETSA</a>
+
+        </div>
+
+        <!-- Developed By Section -->
+        <div class="social-media">
+            <h3>Developed By:</h3>
+            <a href="https://www.linkedin.com/in/aditya-thodsare-475366289/" target="_blank">Aditya Thodsare</a>
+            <a href="https://www.linkedin.com/in/khushi-sharma-335aa62a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">Khushi Sharma</a>
+            <a href="https://www.linkedin.com/in/kirti-shelke-0b5ab226a/" target="_blank">Kirti Shelke</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
